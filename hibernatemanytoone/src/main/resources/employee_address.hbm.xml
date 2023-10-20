@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/orm/hbm"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.hibernate.org/xsd/orm/hbm
+                                       http://www.hibernate.org/xsd/orm/hbm/hbm-configuration-5.4.xsd"
+                   package="com.kgisl.hibernatemanytoone">
+
+    <class name="Employee" table="Employee">
+        <id name="employeeId" column="employeeId">
+            <generator class="increment" />
+        </id>
+        <!-- Other properties of Employee -->
+         <property name="name"></property>
+        <property name="email"></property>
+        <one-to-one name="address" class="Address"  />
+    </class>
+
+    <class name="Address" table="Address">
+        <id name="addressId" column="addressId">
+            <generator class="increment" />
+        </id>
+        <!-- Other properties of Address -->
+        
+            <property name="addressLine1"></property>
+            <property name="city"></property>
+            <property name="state"></property>
+            <property name="country"></property>
+            <property name="pincode"></property>
+
+        <one-to-one name="employee" class="Employee"  />
+    </class>
+
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

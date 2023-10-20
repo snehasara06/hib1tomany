@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>    
+<!DOCTYPE hibernate-mapping PUBLIC    
+          "-//Hibernate/Hibernate Mapping DTD 5.4//EN"    
+          "http://hibernate.sourceforge.net/hibernate-mapping-5.4.dtd">    
+   
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/orm/hbm"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.hibernate.org/xsd/orm/hbm
+                                       http://www.hibernate.org/xsd/orm/hbm/hibernate-mapping-5.4.xsd"
+                   package="com.kgisl.hibernatemanytoone">
+                   
+    <class name="com.kgisl.hibernatemanytoone.Address" table="address">
+        <!-- <table name="address" type="InnoDB" /> -->
+        <id name="addressId" column="addressId">
+            <generator class="increment" />
+        </id>
+
+        <property name="addressLine1" column="addressLine1" />
+        <property name="city" column="city" />
+        <property name="state" column="state" />
+        <property name="country" column="country" />
+        <property name="pincode" column="pincode" />
+
+        <join table="employeeaddress" inverse="true">
+            <key column="addressId"/>
+            <many-to-one name="employee" class="com.kgisl.hibernatemanytoone.Employee" column="employeeId" />
+        </join>
+
+        <!-- <many-to-one name="employee" column="employee" cascade="all"></many-to-one> -->
+        <!-- <one-to-one name="employee" cascade="all" /> -->
+    </class>
+</hibernate-mapping>

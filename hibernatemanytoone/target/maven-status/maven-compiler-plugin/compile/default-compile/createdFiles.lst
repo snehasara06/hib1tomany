@@ -1,0 +1,6 @@
+com\kgisl\hibernatemanytoone\Address.class
+com\kgisl\hibernatemanytoone\Store.class
+com\kgisl\hibernatemanytoone\Car.class
+com\kgisl\hibernatemanytoone\Fetch.class
+com\kgisl\hibernatemanytoone\Owner.class
+com\kgisl\hibernatemanytoone\Employee.class

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>    
+<!DOCTYPE hibernate-mapping PUBLIC    
+          "-//Hibernate/Hibernate Mapping DTD 5.4//EN"    
+          "http://hibernate.sourceforge.net/hibernate-mapping-5.4.dtd">    
+        
+<hibernate-mapping>
+<class name="com.kgisl.hibernatemanytoone.Owner" table="owner">
+<id name="ownerId">
+<generator class="increment"></generator>
+</id>
+
+<property name="ownerName"></property>
+
+<list name="cars" cascade="all">
+<key column="oId"></key>
+<index column="brand"></index>
+<one-to-many class="com.kgisl.hibernatemanytoone.Car"></one-to-many>
+</list>
+
+</class>
+</hibernate-mapping>
